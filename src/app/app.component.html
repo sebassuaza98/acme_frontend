@@ -1,0 +1,178 @@
+
+<form [formGroup]="profileForm" (ngSubmit)="enviarDatos()">
+  <div id="div-pri">
+    <div class="div-pri2">
+      <h4 clas="title">Registro de vehiculos</h4>
+        <div class="label-2">
+          <label class="23">
+            Placa:
+          </label >
+          <input type="text1" class="input" placeholder="Placa del vehiculo" formControlName="placa" >
+        </div>
+
+        <div class="label-2">
+          <label class="23">
+            Color:
+          </label >
+          <input type="text1" class="input" placeholder="Color del vehiculo" formControlName="color">
+        </div>
+        <div class="label-2">
+          <label class="23">
+            Marca:
+          </label >
+          <input type="text1" class="input" placeholder="Marca del vehiculo" formControlName="marca">
+        </div>
+        <div class="label-2">
+          <label class="23">
+            Tipo de vehiculo:
+          </label >
+          <input type="text1" class="input" placeholder="Tipo de vehiculo" formControlName="tipo_vehiculo">
+        </div>
+        <div>
+        </div>
+        <div class="label-2">
+          <label class="23">
+            CC del conductor:
+          </label >
+          <input type="number" class="input" placeholder="CC del conductor" formControlName="conductor">
+        </div>
+        <div class="label-2">
+          <label class="23">
+            CC del propietario:
+          </label >
+
+          <input type="number" class="input" placeholder="CC del propietario" formControlName="propietario">
+        </div>
+
+        <button class="btn-pr"  type="submit" [disabled]="!profileForm.valid">Registrar</button>
+    </div>
+  </div>
+
+</form>
+
+<form [formGroup]="mostrarForm" (ngSubmit)="enviarPersona()">
+  <div class="div-2">
+    <h4 clas="title">Registro de Personal</h4>
+   <div class="label-2">
+  <label class="23">
+    Cedula:
+  </label >
+  <input type="number" class="input" placeholder="Cedula" formControlName="cedula" >
+</div>
+
+<div class="label-2">
+  <label class="23">
+    Primer nombre:
+  </label >
+  <input type="text1" class="input" placeholder="Primer nombre" formControlName="primer_nombre">
+</div>
+<div class="label-2">
+  <label class="23">
+    Segundo nombre:
+  </label >
+  <input type="text1" class="input" placeholder="Segundo nombre" formControlName="segundo_nombre">
+</div>
+<div class="label-2">
+  <label class="23">
+    Apellidos:
+  </label >
+  <input type="text1" class="input" placeholder="Apellidos" formControlName="apellidos">
+</div>
+<div class="label-2">
+  <label class="23">
+    Rol Conductor/Propietario:
+  </label >
+  <input type="text1" class="input" placeholder="Rol" formControlName="rol">
+</div>
+<div class="label-2">
+  <label class="23">
+    Direccion:
+  </label >
+  <input type="text1" class="input" placeholder="Direccion" formControlName="direccion">
+</div>
+<div class="label-2">
+  <label class="23">
+    Telefono:
+  </label >
+  <input type="number" class="input" placeholder="Telefono " formControlName="telefono">
+</div>
+<div class="label-2">
+  <label class="23">
+    Ciudad:
+  </label >
+  <input type="text1" class="input" placeholder="Ciudad " formControlName="ciudad">
+</div>
+
+<button class="btn-pr"  type="submit" [disabled]="!mostrarForm.valid">Registrar</button>
+  </div>
+</form>
+
+<div class="div-3">
+  <h4 clas="title">Infome de vehiculos</h4>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Placa</th>
+        <th scope="col">Marca</th>
+        <th scope="col">Conducor</th>
+        <th scope="col">Propietario</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let country of countries; index as i">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ country.placa | number }}</td>
+        <td>{{ country.marca | number }}</td>
+        <td>{{ country.nombre_conductor | number }}</td>
+        <td>{{ country.nombre_propietario | number }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+
+<style>
+  .div-2{
+    background-color: #edecef;
+    width: 600px;
+    height: 410px;
+    position: absolute;
+    top: 20px; left: 40px;
+    border: 1px solid #000;
+  }
+
+
+  .div-3{
+    background-color: #edecef;
+    width: 600px;
+    height: 410px;
+    position: absolute;
+    top: 400px; right: 40px;
+    border: 1px solid #000;
+  }
+  .div-pri2{
+    background-color: #edecef;
+    width: 600px;
+    height: 340px;
+    position: absolute;
+    top: 20px; right: 40px;
+    border: 1px solid #000;
+  }
+  .label-2{
+    margin: 2px 10px 2px 10px;
+  }
+  .input{
+    margin: 5px 10px 5px 10px;
+  }
+  .title{
+    margin: 5px 10px 5px 10px;
+    text-align: center;
+  }
+  .btn-pr{
+    position: absolute;
+    right: 300px;
+    margin: 5px 10px 5px 10px;
+  }
+
+  </style>
